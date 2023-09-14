@@ -30,3 +30,6 @@ if (launchReady) {
 } else {
    console.log('Launch scrubbed.');
 }
+
+//shuttle should not launch because of insufficient fuel
+//shuttle did launch

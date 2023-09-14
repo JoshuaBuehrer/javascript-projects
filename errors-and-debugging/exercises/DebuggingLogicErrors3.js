@@ -25,6 +25,15 @@ if (crewStatus && computerStatus === 'green'){
    console.log('WARNING: Crew or computer not ready!');
    launchReady = false;
 }
+console.log(launchReady)
+
+
+//launchReady should be true
+//program is correct 
+
+
+
+
 
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
