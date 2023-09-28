@@ -1,0 +1,71 @@
+
+function reverse(str) {
+    let reversed = '';
+
+    for (let i = 0; i < str.length; i++) {
+        reversed = str[i] + reversed;
+    }
+
+    return reversed;
+}
+
+function makeLine(size) {
+    let output = '';
+
+    for (var i = 0; i < size; i++) {
+    output += '#';
+}
+return output;
+}
+
+function makeSquare(size) {
+      return makeRectangle(size, size);
+}
+
+
+function makeRectangle(width, height){
+output = "";
+for(let i = 0; i < height; i++) {
+output += `${makeLine(width)}\n`;
+} 
+return output.slice(0, -1);
+}
+
+
+function makeDownwardStairs(height) {
+    let output = ""
+
+    for(i = 0; i< height; i++) {
+        output += `${makeLine(i+1)}\n`;        
+    }
+    return output.slice(0, -1)
+}
+
+
+function makeSpaceLine(numSpaces, numChar) {
+    let spaces = "";
+for (let i = 0; i < numSpaces; i++) {
+    spaces += " ";
+}
+  let chars = makeLine(numChar)
+
+  return `${spaces}${chars}${spaces}`
+}
+
+function makeIsoscelesTriangle(height) {
+output = "";
+
+for (let i = 0; i < height; i++){
+output += `${makeSpaceLine(height - i - 1, 2 * i + 1)}\n`
+}
+return output.slice(0, -1);
+}
+
+
+function makeDimond(height) {
+    let topHalf = makeIsoscelesTriangle(height);
+ 
+    let bottomHalf = reverse(topHalf)
+ return `${topHalf}\n${bottomHalf}`
+}
+console.log(makeDimond(5))
