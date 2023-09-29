@@ -1,0 +1,80 @@
+let array = ["Elocution", 21, "Clean teeth", 100];
+
+function numberAndStringCheck(myArg) {
+  if (typeof myArg === "number") {
+    return myArg * 3;
+  } else if (typeof myArg === "string") {
+    return "ARRR!";
+  } else {
+    return myArg;
+  }
+}
+// console.log(array.map(numberAndStringCheck))
+
+function checkFuel(level) {
+  if (level > 100000) {
+    return "green";
+  } else if (level > 50000) {
+    return "yellow";
+  } else {
+    return "red";
+  }
+}
+
+function holdStatus(arr) {
+  if (arr.length < 7) {
+    return `Spaces available: ${7 - arr.length}`;
+  } else if (arr.length > 7) {
+    return `Over capacity by ${arr.length - 7} items.`;
+  } else {
+    return "Full";
+  }
+}
+
+checkBackUpFuelTanks = function (status) {
+  if (checkFuel(status) === "green") {
+    return status - 100000;
+  } else if (checkFuel(status) === "yellow") {
+    return status - 50001;
+  } else {
+    return status;
+  }
+};
+
+
+itemPolisher = function(cleanedItems) {
+  let itemsToClean = []
+  for(let i = 0; i <= cleanedItems.length; i++) {
+    itemsToClean.push(cleanedItems[i]);
+    if(itemsToClean[i] === 'gold') {
+      itemsToClean.splice(4, 1, 'totally real goldbrick')
+    } else if(itemsToClean[i] === 'space suits') {
+      itemsToClean.splice(1, 1, 'pajamas')
+    }
+  }
+  return itemsToClean
+  
+}
+
+
+let fuelLevel = 200000;
+let cargoHold = [
+  "meal kits",
+  "space suits",
+  "first-aid kit",
+  "satellite",
+  "gold",
+  "water",
+  "AE-35 unit",
+];
+
+let irs = function(levelOfFuel, itemsInCargo) {
+  let arr = itemPolisher(itemsInCargo);
+  return `Raided ${checkBackUpFuelTanks(levelOfFuel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
+}
+
+console.log(irs(checkFuel, holdStatus))
+console.log("Fuel level: " + checkFuel(fuelLevel));
+console.log("Hold status: " + holdStatus(cargoHold));
+console.log('back up fuel tank level: ' + checkBackUpFuelTanks(fuelLevel));
+console.log(`Items polished: ${itemPolisher(cargoHold)}`)

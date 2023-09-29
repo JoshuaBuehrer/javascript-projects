@@ -62,7 +62,7 @@ return output.slice(0, -1);
 }
 
 
-function makeDimond(height) {
+function makeDiamond(height) {
     let topHalf = makeIsoscelesTriangle(height);
  
     let bottomHalf = reverse(topHalf)
