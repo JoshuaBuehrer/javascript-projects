@@ -1,15 +1,4 @@
-let array = ["Elocution", 21, "Clean teeth", 100];
 
-function numberAndStringCheck(myArg) {
-  if (typeof myArg === "number") {
-    return myArg * 3;
-  } else if (typeof myArg === "string") {
-    return "ARRR!";
-  } else {
-    return myArg;
-  }
-}
-// console.log(array.map(numberAndStringCheck))
 
 function checkFuel(level) {
   if (level > 100000) {
@@ -56,6 +45,10 @@ itemPolisher = function(cleanedItems) {
   
 }
 
+let irs = function(levelOfFuel, itemsInCargo) {
+  let arr = itemPolisher(itemsInCargo);
+  return `Raided ${checkBackUpFuelTanks(levelOfFuel)} kg of fuel from the tanks, and stole "space suits" and "gold" from the cargo hold.`
+}
 
 let fuelLevel = 200000;
 let cargoHold = [
@@ -68,13 +61,9 @@ let cargoHold = [
   "AE-35 unit",
 ];
 
-let irs = function(levelOfFuel, itemsInCargo) {
-  let arr = itemPolisher(itemsInCargo);
-  return `Raided ${checkBackUpFuelTanks(levelOfFuel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
-}
 
-console.log(irs(checkFuel, holdStatus))
+console.log(irs(fuelLevel, cargoHold))
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
-console.log('back up fuel tank level: ' + checkBackUpFuelTanks(fuelLevel));
-console.log(`Items polished: ${itemPolisher(cargoHold)}`)
+
+
