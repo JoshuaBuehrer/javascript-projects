@@ -1,17 +1,19 @@
 {
-   "name": "unit-testing",
-   "version": "1.0.0",
-   "description": "",
-   "main": "index.js",
-   "scripts": {
-     "test": "jest"
-   },
-   "author": "",
-   "license": "ISC",
-   "dependencies": {
-     "readline-sync": "^1.4.10"
-   },
-   "devDependencies": {
+  "name": "unit-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "@types/jest": "^29.5.5",
     "jest": "^29.6.4"
-   }
- }
+  }
+}
